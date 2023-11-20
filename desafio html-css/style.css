@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+    font-size: 62.5%;
+    --base-font: 'Mulish', sans-serif;
+    --cor-fonte: #BD3B93;
+    --cor-fundo: #F9F4FB;
+    --blue-end: #302c63;
+    --gradient-background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
+    --startY: 100%;
+    --delay: 1s;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-fundo);
+    
+}
+
+body{
+    font-family: var(--base-font);
+}
+
+header{
+    text-align: center;
+    padding: 0 3rem;
+}
+
+.astronalta {
+    width: 100%;
+}
+
+header h1{
+    font-size: 4rem;
+    margin-top: 1rem;
+    color: var(--cor-fonte);
+}
+
+header p{
+    font-size: 2.7rem;
+}
+
+.seta{
+    border: 4px solid var(--cor-fonte);
+    border-radius: 50%;
+    padding: 2rem 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+section{
+    padding: 1rem;
+    background: var(--gradient-background);
+}
+
+.infos h2{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color: var(--cor-fonte);
+}
+
+.infos span{
+    
+    font-size: 1.6rem;
+}
+
+.infos{
+    padding: 2rem;
+    margin: 3rem 3rem 4rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.infos img{
+    padding: 1rem 0rem 2rem;
+    animation: appear var(--delay) backwards;    
+}
+
+.infos :hover{
+    border: 4px solid var(--cor-fonte);
+}
+
+
+aside{
+    padding: 5rem 3rem;
+}
+
+.stars{
+    display: none;
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-size: 4rem;
+    padding-bottom: 3rem;
+    color: var(--cor-fonte);
+    font-family: var(--base-font);
+}
+
+.fieldset-wrapper{
+    padding: 2rem;
+}
+
+.input-container{
+    border: 2px solid var(--blue-end);
+    border-radius: 10px;
+    margin: 2rem 0;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.input-container img{
+    padding-right: 0.5rem;
+}
+
+.input-container input, textarea{
+    border: none;
+}
+
+textarea{
+    width: 100%;
+    resize: none;
+}
+
+input, textarea, label{
+    background-color: var(--cor-fundo);
+    font-family: var(--base-font);
+}
+
+button{
+    background: var(--gradient-background);
+    font-size: 2rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 1.6rem;
+}
+
+@keyframes move{
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+footer{
+    font-size: 2.4rem;
+    color: white;
+    background: var(--gradient-background);
+    text-align: center;
+    padding: 2.4rem;
+    --startY: 100%;
+    animation: move 1s;
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    15%{
+        opacity: 0.5;
+        transform: scale(0.25);
+    }
+
+    30%{
+        opacity: 1;
+        transform: scale(0.50);
+    }
+
+    45%{
+        opacity: 1;
+        transform: scale(0.75);
+    }
+
+    60%{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75%{
+        opacity: 1;
+        transform: scale(1.25);
+    }
+
+    90%{
+        opacity: 1;
+        transform: scale(1.35);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1.50);
+    }
+}
+
+@media (min-width: 700px) {
+    
+    header{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        padding-bottom: 12rem;
+    }
+
+    .container-seta{
+        position: absolute;
+        bottom: 4rem;
+    }
+
+    header .astronalta {
+       width: 50%;
+    }
+
+    section .info-container{
+        display: flex;
+        padding: 4rem 0rem;
+        align-items: stretch;
+        justify-content: space-around;
+    }
+
+    section .infos{
+        width: 25rem;
+        animation: appear var(--delay) backwards;
+    }
+
+    aside{
+        position: relative;
+    }
+
+    aside .stars{
+        position: absolute;
+        display: flex;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+    }
+
+
+    aside .fieldset-wrapper{
+        width: 50%;
+    }
+
+}
