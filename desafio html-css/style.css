@@ -14,7 +14,7 @@
     --blue-end: #302c63;
     --gradient-background: linear-gradient(96.21deg, #343193 0%, #302c63 99.68%);
     --startY: 100%;
-    --delay: 1s;
+    --delay: 1.5s;
 }
 
 .page{
@@ -35,6 +35,8 @@ header{
 
 .astronalta {
     width: 100%;
+    --startY: -100%;
+    animation: move 2s;
 }
 
 header h1{
@@ -76,6 +78,7 @@ section{
     margin: 3rem 3rem 4rem;
     background-color: white;
     border-radius: 10px;
+    border: 4px solid transparent;
 }
 
 .infos img{
@@ -83,7 +86,7 @@ section{
     animation: appear var(--delay) backwards;    
 }
 
-.infos :hover{
+.infos:hover{
     border: 4px solid var(--cor-fonte);
 }
 
@@ -127,10 +130,13 @@ legend{
     border: none;
 }
 
-textarea{
+textarea, input{
+    display: flex;
     width: 100%;
     resize: none;
+    padding: 1rem;
 }
+
 
 input, textarea, label{
     background-color: var(--cor-fundo);
@@ -142,9 +148,16 @@ button{
     font-size: 2rem;
     color: white;
     border-radius: 10px;
-    border: none;
+    border: 4px solid transparent;
     padding: 1.6rem;
+    cursor: pointer;
 }
+
+button:hover{
+    border: 4px solid var(--cor-fonte);
+}
+
+
 
 @keyframes move{
     from {
@@ -247,7 +260,6 @@ footer{
         bottom: 0;
         right: 0;
     }
-
 
     aside .fieldset-wrapper{
         width: 50%;
